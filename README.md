@@ -1,1 +1,120 @@
-# Autonomous-Mobile-Robots-Simulation-System
+# Autonomous Mobile Robots Simulation System
+
+## Описание
+
+Программная система для моделирования поведения автономных мобильных роботов в ограниченном прямоугольном пространстве. Система управляет перемещением роботов между активными точками, предотвращает столкновения и выполняет задания.
+
+## Требования
+
+- Компилятор C++17 или новее
+- CMake 3.10+ (рекомендуется)
+- Библиотека yaml-cpp (для работы с YAML)
+
+## Установка зависимостей
+
+### Ubuntu/Debian
+```bash
+sudo apt-get install libyaml-cpp-dev cmake
+```
+
+### Windows (vcpkg)
+```bash
+vcpkg install yaml-cpp
+```
+
+## Сборка и запуск
+
+1. Клонируйте репозиторий:
+```bash
+git clone <repository-url>
+cd robots-simulation
+```
+
+2. Соберите проект:
+```bash
+mkdir build && cd build
+cmake ..
+make
+```
+
+3. Запустите программу:
+```bash
+./robot_simulation
+```
+
+## Конфигурация (YAML)
+
+Основной конфигурационный файл `config.yaml`:
+
+```yaml
+grid:
+  width: 20
+  height: 30
+
+robots:
+  - id: 1
+    x: 5
+    y: 5
+  - id: 2
+    x: 10
+    y: 10
+
+active_points:
+  - id: 1
+    x: 0
+    y: 0
+  - id: 2
+    x: 19
+    y: 0
+
+settings:
+  wait_time: 3
+  tasks_file: "tasks.txt"
+  log_file: "simulation.log"
+```
+
+## Формат файла заданий
+
+Файл `tasks.txt` содержит задания в формате:
+```
+начальная_точка конечная_точка
+```
+
+Пример:
+```
+1 5
+3 2
+```
+
+## Логирование
+
+Программа записывает подробный лог в файл, указанный в конфигурации. Формат лога:
+```
+[Такт 1]
+Робот 1: (5,5) Свободен
+Робот 2: (10,10) Свободен
+
+[Такт 2]
+Робот 1: (5,5) Едет к А (задание 1)
+Робот 2: (10,10) Свободен
+```
+
+## Структура проекта
+
+```
+src/
+├── main.cpp
+├── Robot.h
+├── Robot.cpp
+├── Grid.h
+├── Grid.cpp
+├── TaskManager.h
+├── TaskManager.cpp
+├── Simulation.h
+├── Simulation.cpp
+└── ConfigParser.h
+```
+
+## Лицензия
+
+[MIT License](LICENSE)
