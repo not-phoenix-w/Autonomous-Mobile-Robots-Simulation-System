@@ -1,0 +1,48 @@
+screen:
+  width: 600
+  height: 800
+
+grid:
+  width: 20           # ширина сетки
+  height: 20          # высота сетки
+
+robots:
+  - id: 1
+    position: [2, 3]
+  - id: 2
+    position: [5, 10]
+  - id: 3
+    position: [10, 15]
+
+active_points:
+  - id: 1
+    position: [1, 1]
+  - id: 2
+    position: [18, 18]
+  - id: 3
+    position: [3, 5]
+  - id: 4
+    position: [16, 6]
+
+tasks:
+  - id: 1
+    from: 1
+    to: 2
+    wait_ticks_a: 3
+    wait_ticks_b: 2
+  - id: 2
+    from: 3
+    to: 4
+    wait_ticks_a: 4
+    wait_ticks_b: 1
+
+visualization:
+  grid_color: "#CCCCCC"
+  robot_color: "#0077FF"
+  point_color: "#FF5500"
+  tick_delay_ms: 200      # задержка между тактами в миллисекундах
+
+simulator:
+  max_ticks: 1000
+  auto_start: false
+  enable_conflict_resolution: true
