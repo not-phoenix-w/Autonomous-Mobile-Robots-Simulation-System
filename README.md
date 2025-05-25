@@ -99,21 +99,6 @@ settings:
 Робот 2: (10,10) Свободен
 ```
 
-## Структура проекта
-
-```
-src/
-├── main.cpp
-├── Robot.h
-├── Robot.cpp
-├── Grid.h
-├── Grid.cpp
-├── TaskManager.h
-├── TaskManager.cpp
-├── Simulation.h
-├── Simulation.cpp
-└── ConfigParser.h
-```
 
 ## Лицензия
 
